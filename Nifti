@@ -1,0 +1,3 @@
+import nilearn.nifti
+
+x = [0, 7]
