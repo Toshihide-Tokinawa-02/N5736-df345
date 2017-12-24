@@ -1,4 +1,4 @@
-
+ 
 import numpy as np
  
 # sigmoid function
@@ -22,7 +22,7 @@ syn0 = 2*np.random.random((3,1)) - 1
  
 for iter in xrange(10000):
  
-	# forward propagation
+	# forward propagation x
 	l0 = X
 	l1 = nonlin(np.dot(l0,syn0))
  
