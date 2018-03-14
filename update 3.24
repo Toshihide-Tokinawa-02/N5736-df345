@@ -1,0 +1,15 @@
+##This is from the Lib Bug Fix from Slicer##
+
+ //----------------------------------------------------------------------------
+ void vtkMRMLGPURayCastVolumeRenderingDisplayNode::Copy(vtkMRMLNode *anode)
+ {
+   int wasModifying = this->StartModify();
+   this->Superclass::Copy(anode);
+-  vtkMRMLGPURayCastVolumeRenderingDisplayNode *node = vtkMRMLGPURayCastVolumeRenderingDisplayNode::SafeDownCast(anode);
+ 
+-  this->SetRaycastTechnique(node->GetRaycastTechnique());
++  vtkMRMLCopyBeginMacro(anode);
++  vtkMRMLCopyIntMacro(RaycastTechnique);
++  vtkMRMLCopyIntMacro(UseJittering);
++  vtkMRMLCopyIntMacro(LockSampleDistanceToInputSpacing);
++  vtkMRMLCopyEndMacro();
